@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UnusedResources"
+    android:layout_width="match_parent"
+    android:layout_height="58dp"
+    android:theme="@style/ActionBarTransparent"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/ib_action_back"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorTransparent"
+        android:src="@mipmap/ic_back"
+        android:layout_marginStart="4dp"
+        android:contentDescription="@string/def_ic_back"
+        android:layout_marginLeft="4dp" />
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UnusedResources"
+    android:id="@+id/ll_empty_detail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="100dp"
+    android:gravity="center|top"
+    android:visibility="gone"
+    android:theme="@style/TransparentTheme">
+
+    <ImageView
+        android:id="@+id/iv_empty_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/bg_circle_grey"
+        android:padding="@dimen/vertical_margin"
+        android:tint="@color/colorWhite"
+        android:src="@drawable/ic_internet_error"
+        android:contentDescription="@string/image" />
+
+    <TextView
+        android:id="@+id/tv_empty_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorGray"
+        android:textSize="16sp"
+        android:layout_marginTop="@dimen/vertical_margin_half"
+        android:text="@string/internet_error_title"
+        android:textStyle="bold"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/tv_empty_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorGray"
+        android:textSize="14sp"
+        android:paddingLeft="@dimen/vertical_margin"
+        android:paddingRight="@dimen/vertical_margin"
+        android:layout_marginTop="4dp"
+        android:text="@string/internet_error_message"
+        android:gravity="center"/>
+
+    <include layout="@layout/button_progress_error"/>
+
+</LinearLayout>

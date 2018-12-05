@@ -1,0 +1,16 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UnusedResources"
+    android:layout_width="fill_parent"
+    android:theme="@style/AppTheme"
+    android:layout_height="55dp"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_error_text"
+        style="@style/tvTextNormal"
+        android:layout_gravity="center"
+        android:text="@string/def_view_message" />
+
+</LinearLayout>

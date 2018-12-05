@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#e1791e</color>
+    <color name="colorPrimaryDark">#d2680b</color>
+    <color name="colorAccent">#009688</color>
+
+
+    <color name="whiteColor">#ffffff</color>
+
+    <!--App template start-->
+    <color name="colorHint">#bdbdbd</color>
+    <color name="colorHintDark">#bfbfbf</color>
+    <color name="colorText">#666666</color>
+    <color name="colorTextLite">#969696</color>
+    <color name="colorDivider">#e5e6eb</color>
+    <color name="colorDividerShadow">#50e5e6eb</color>
+
+
+    <!--status color code start-->
+    <color name="statusPending">#f0ad4e</color>
+    <color name="statusProcess">#cdcdcd</color>
+    <color name="statusComplete">#0071bd</color>
+    <color name="statusInprogress">#5cb85c</color>
+    <color name="statusCancelled">#d9534f</color>
+    <!--status color code end-->
+
+    <color name="colorButtonSelect">#cdcdcd</color>
+    <color name="colorButtonDeselect">#e1e1e1</color>
+    <color name="colorButtonStroke">#3ab54a</color>
+    <color name="colorButtonText">#ffffff</color>
+
+    <!--App Base Color start-->
+    <color name="blackColor">#000000</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorGreen">#3ab54a</color>
+    <color name="colorGreenLite">#903ab54a</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorDarkGrey">#333333</color>
+    <color name="colorGray">#999999</color>
+    <color name="dialog_line">#eae9e9</color>
+    <color name="bgmain">#f1faff</color>
+    <color name="circularSlot">#78909C</color>
+    <!--App Base Color end-->
+
+
+</resources>

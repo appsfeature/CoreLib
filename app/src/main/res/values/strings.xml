@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">CoreLib</string>
+    <string name="def_view_message">View Message</string>
+    <string name="def_ic_back">ic_back</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="dialog_message">Processing, Keep patience!</string>
+    <string name="submit">Submit</string>
+    <string name="retry">Retry</string>
+    <string name="alert">Alert</string>
+    <string name="description">description</string>
+    <string name="button">Button</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="thanks">Thanks!!</string>
+    <string name="done">Done</string>
+    <string name="app_feedback">App Feedback!!</string>
+    <string name="enter_your_feedback_here">Enter your feedback here</string>
+    <string name="send_feedback">Send Feedback</string>
+    <string name="send">Send</string>
+    <string name="image">image</string>
+    <string name="internet_error_title">Internet Connection</string>
+    <string name="internet_error_message">Slow internet response. Please try after some time.</string>
+
+</resources>
