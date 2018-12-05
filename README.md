@@ -19,7 +19,7 @@ allprojects {
 ```
 Add this to your module build.gradle
 
-```java
+```gradle
    dependencies {
         implementation 'org.bitbucket.amitresearchdev:corelib:1.0'
     }
