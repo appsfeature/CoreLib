@@ -28,7 +28,7 @@ Add this to your module build.gradle
 
 Usage
 
-```
+```java
 	//add in your Application class
     CoreLib.newInstance(APPLICATION_KEYWORD)
                   .setTestVersion("0.1")
