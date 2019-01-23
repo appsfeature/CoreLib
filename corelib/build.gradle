@@ -22,20 +22,16 @@ android {
 }
 
 dependencies {
-
-    def support_version = '1.0.2'
-
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "androidx.appcompat:appcompat:$support_version"
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
-    implementation 'com.google.android.material:material:1.1.0-alpha01'
+    implementation "androidx.appcompat:appcompat:$rootProject.support_version"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraint_layout"
+    implementation "com.google.android.material:material:$rootProject.material"
     implementation 'androidx.vectordrawable:vectordrawable:1.0.1'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclar_view"
+    implementation "androidx.cardview:cardview:$rootProject.card_view"
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation "androidx.test.ext:junit:1.0.0"
+    androidTestImplementation "androidx.test.ext:junit:1.1.0"
 //    androidTestImplementation 'androidx.test:runner:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
-    androidTestImplementation 'androidx.test:core:1.1.0-alpha01'
-
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    androidTestImplementation 'androidx.test:core:1.1.0'
 }

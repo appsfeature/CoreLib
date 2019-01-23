@@ -1,0 +1,103 @@
+
+public class MainActivity extends AppCompatActivity {
+
+    private int count;
+    private ProgressManager progressManager;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        RelativeLayout container = (RelativeLayout) findViewById(R.id.container);
+        progressManager = ProgressManager.newInstance(container)
+                .setLoadingMessage("Processing, Please wait...")
+                .setLayoutType(ProgressManager.SCREEN_SMALL)
+                .setProgressTheme(ProgressManager.THEME_DARK)
+                .setErrorIcon(R.drawable.ic_internet_error)
+                .setRetryListener(new RetryListener() {
+                    @Override
+                    public void onRetryClick() {
+                        executeTask();
+                    }
+                })
+                .build();
+
+
+
+        executeTask();
+    }
+
+    private void executeTask() {
+        new BackgroundTask().execute();
+    }
+
+    public void onRestartTaskClick(View view) {
+        count = 0;
+        executeTask();
+    }
+
+    private class BackgroundTask extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressManager.updateLoadingMessage("Downloading, Please wait.....");
+            progressManager.startProgress();
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            if (count == 2) {
+                progressManager.stopProgress();
+            } else {
+                progressManager.stopProgress("Internet error occurred");
+            }
+            count++;
+        }
+    }
+}
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center|top"
+    android:background="#dedede"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:padding="32dp"
+        android:text="Sample Progress Manager"  />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onRestartTaskClick"
+        android:text="Restart Task"/>
+
+
+</LinearLayout>

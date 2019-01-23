@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llProgress"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="left"
+    android:padding="8dp"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/ivErrorIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:tint="@color/colorWhite"
+        android:visibility="gone"
+        android:src="@drawable/ic_internet_error"
+        android:contentDescription="@string/progress_manager_message" />
+
+    <include layout="@layout/progress_manager_button"/>
+
+    <TextView
+        android:id="@+id/tvProgressMessage"
+        android:layout_width="wrap_content"
+        android:text="@string/progress_manager_message"
+        android:textColor="@color/progressTextColorMessage"
+        android:textSize="@dimen/progressManagerTextSizeMessage"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

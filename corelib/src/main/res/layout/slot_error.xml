@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="UnusedResources"
     android:layout_width="fill_parent"
-    android:theme="@style/AppTheme"
+    android:theme="@style/AppThemeCoreLib"
     android:layout_height="55dp"
     android:gravity="center"
     android:orientation="vertical" >

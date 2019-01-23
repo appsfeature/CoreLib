@@ -7,7 +7,6 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="dialog_message">Processing, Keep patience!</string>
     <string name="submit">Submit</string>
-    <string name="retry">Retry</string>
     <string name="alert">Alert</string>
     <string name="description">description</string>
     <string name="button">Button</string>
@@ -22,5 +21,12 @@
     <string name="image">image</string>
     <string name="internet_error_title">Internet Connection</string>
     <string name="internet_error_message">Slow internet response. Please try after some time.</string>
+    <string name="transition_actionbar_title">transition_actionbar_title</string>
+    <string name="retry">Retry</string>
+
+    <!--ProgressManager resources-->
+    <string name="progress_manager_retry">Retry</string>
+    <string name="progress_manager_message">progress message</string>
+    <!--ProgressManager resources-->
 
 </resources>

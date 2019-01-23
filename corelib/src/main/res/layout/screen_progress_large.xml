@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llProgress"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center|top"
+    android:paddingTop="100dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@color/colorWhite">
+
+    <ImageView
+        android:id="@+id/ivErrorIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:tint="@color/colorAccent"
+        android:visibility="gone"
+        android:src="@drawable/ic_internet_error"
+        android:contentDescription="@string/progress_manager_message" />
+
+    <TextView
+        android:id="@+id/tvProgressMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="@string/progress_manager_message"
+        android:textColor="@color/progressTextColorBlack"
+        android:textSize="@dimen/progressManagerTextSizeMessage"/>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@color/colorTransparent"
+            android:layout_centerHorizontal="true"
+            android:padding="6dp"
+            android:indeterminateDrawable="@drawable/progress_custom_accent" />
+
+
+        <Button
+            android:id="@+id/btnRetry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTransparent"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="false"
+            android:textSize="@dimen/progressManagerTextSizeRetryButton"
+            android:textColor="@color/colorAccent"
+            android:text="@string/progress_manager_retry"  />
+
+
+    </RelativeLayout>
+
+</LinearLayout>
