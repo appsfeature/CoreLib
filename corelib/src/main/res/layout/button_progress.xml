@@ -42,7 +42,7 @@
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
         android:textAllCaps="false"
-        android:textSize="@dimen/progressButtonTextSize"
+        android:textSize="@dimen/progress_button_text_size"
         android:textColor="@color/colorWhite"
         android:text="@string/submit"  />
 

@@ -33,12 +33,12 @@
     <dimen name="nav_header_height">140dp</dimen>
 
     <!--ProgressButton package-->
-    <dimen name="progressButtonTextSize">18sp</dimen>
+    <dimen name="progress_button_text_size">18sp</dimen>
     <!--ProgressButton package-->
 
     <!--ProgressManager package-->
-    <dimen name="progressManagerTextSizeRetryButton">16sp</dimen>
-    <dimen name="progressManagerTextSizeMessage">16sp</dimen>
+    <dimen name="progress_manager_text_size_retry_button">16sp</dimen>
+    <dimen name="progress_manager_text_size_message">16sp</dimen>
     <!--ProgressManager package-->
 
 </resources>

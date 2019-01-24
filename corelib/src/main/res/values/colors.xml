@@ -21,7 +21,7 @@
     <color name="statusPending">#f0ad4e</color>
     <color name="statusProcess">#cdcdcd</color>
     <color name="statusComplete">#0071bd</color>
-    <color name="statusInProgress">#5cb85c</color>
+    <color name="statusInProgress2">#5cb85c</color>
     <color name="statusCancelled">#d9534f</color>
     <!--status color code end-->
 

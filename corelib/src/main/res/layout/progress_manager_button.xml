@@ -22,9 +22,9 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:textAllCaps="false"
-        android:textSize="@dimen/progressManagerTextSizeRetryButton"
+        android:textSize="@dimen/progress_manager_text_size_retry_button"
         android:textColor="@color/progressTextColorButton"
-        android:text="@string/progress_manager_retry"  />
+        android:text="@string/progress_manager_retry_button"  />
 
 
 </RelativeLayout>
