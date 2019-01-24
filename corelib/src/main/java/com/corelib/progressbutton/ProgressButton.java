@@ -70,6 +70,10 @@ public class ProgressButton {
         });
     }
 
+    public static View getActivityRootView(Activity activity) {
+        return activity.getWindow().getDecorView().getRootView();
+    }
+
     //================================================================================
     // Accessors
     //================================================================================
@@ -190,12 +194,14 @@ public class ProgressButton {
     public void revertProgress() {
         revertProgress(null);
     }
+
     public void revertProgress(String buttonText) {
-        if(!TextUtils.isEmpty(buttonText)){
+        if (!TextUtils.isEmpty(buttonText)) {
             setText(buttonText);
         }
         showButtonAction();
     }
+
     public void revertSuccessProgress() {
         revertSuccessProgress(false);
     }
@@ -235,7 +241,7 @@ public class ProgressButton {
         if (pBar != null) {
 //            pBar.startAnimation(inAnim);
 //            pBar.setVisibility(View.VISIBLE);
-            startAlphaAnimation(pBar, View.VISIBLE); 
+            startAlphaAnimation(pBar, View.VISIBLE);
         }
     }
 
