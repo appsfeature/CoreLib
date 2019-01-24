@@ -21,13 +21,19 @@ android {
 }
 
 dependencies {
+    def support_version = '1.1.0-alpha01'
+    def constraint_layout = '2.0.0-alpha3'
+    def recyclar_view = '1.1.0-alpha01'
+    def card_view = '1.0.0'
+    def material = '1.1.0-alpha02'
+
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "androidx.appcompat:appcompat:$rootProject.support_version"
-    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraint_layout"
-    implementation "com.google.android.material:material:$rootProject.material"
+    implementation "androidx.appcompat:appcompat:$support_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout"
+    implementation "com.google.android.material:material:$material"
     implementation 'androidx.vectordrawable:vectordrawable:1.0.1'
-    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclar_view"
-    implementation "androidx.cardview:cardview:$rootProject.card_view"
+    implementation "androidx.recyclerview:recyclerview:$recyclar_view"
+    implementation "androidx.cardview:cardview:$card_view"
 }
 
 //git tag -a 1.2 -m "v1.2"

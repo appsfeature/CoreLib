@@ -23,14 +23,7 @@ allprojects {
         maven { url 'https://jitpack.io' }
     }
 }
-ext{
-    //dependencies
-    support_version = '1.1.0-alpha01'
-    constraint_layout = '2.0.0-alpha3'
-    recyclar_view = '1.1.0-alpha01'
-    card_view = '1.0.0'
-    material = '1.1.0-alpha02'
-}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
