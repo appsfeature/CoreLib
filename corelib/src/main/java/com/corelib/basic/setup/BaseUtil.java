@@ -68,6 +68,14 @@ public class BaseUtil{
 
     }
 
+    public static View rootView(Activity activity){
+        View v = activity.findViewById(android.R.id.content);
+        // some devices you have to use
+        if (v == null)
+            v = activity.getWindow().getDecorView().findViewById(android.R.id.content);
+        return v;
+    }
+
     public View getActivityRootView() {
         return activity.getWindow().getDecorView().getRootView();
     }
@@ -92,7 +100,7 @@ public class BaseUtil{
     private Toolbar initToolBar(final AppCompatActivity mActivity, View view, String title, long duration) {
         Toolbar toolbar;
         toolbar = view.findViewById(R.id.toolbar);
-        TextView tvTitle = toolbar.findViewById(R.id.title);
+        TextView tvTitle = null;//= toolbar.findViewById(R.id.title);
         tvTitle.setText(title);
         mActivity.setSupportActionBar(toolbar);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

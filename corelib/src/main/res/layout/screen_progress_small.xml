@@ -25,6 +25,7 @@
         android:text="@string/progress_manager_message"
         android:textColor="@color/progressTextColorMessage"
         android:textSize="@dimen/progress_manager_text_size_message"
+        android:paddingBottom="16dp"
         android:layout_height="wrap_content" />
 
 </LinearLayout>

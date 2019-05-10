@@ -44,13 +44,6 @@ public class PopupDialog extends DialogFragment {
         setRetainInstance(true);
     }
 
-//    public void show(FragmentManager fragmentManager) {
-//        if (fragmentManager != null)
-//            mInstance.show(fragmentManager, "popupDialog");
-//    }
-
-
-
     public static PopupDialog newInstance(String errorMessage, DialogListener listener) {
         PopupDialog mInstance = new PopupDialog();
         mInstance.errorMessage = errorMessage;

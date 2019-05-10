@@ -33,7 +33,7 @@ public class DateTimeUtility {
 
 
     /**
-     * used in DatePickerDialog
+     * used in DatePickerDialog2
      */
     public static String cDateDDMMMYY(int day, int month, int year) {
         Calendar cal = Calendar.getInstance();

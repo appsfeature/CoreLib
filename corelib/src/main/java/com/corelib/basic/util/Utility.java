@@ -1,14 +1,23 @@
 package com.corelib.basic.util;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
+import android.net.Uri;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
+import android.text.Html;
 import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.format.Formatter;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.util.Base64;
+import android.util.Patterns;
 import android.widget.Toast;
 
 import com.corelib.R;
@@ -25,6 +34,26 @@ import androidx.core.content.ContextCompat;
  */
 //@SuppressLint("UnusedResources")
 public class Utility {
+
+    public static void call(Activity activity,String phoneNumber) {
+        Intent callIntent = new Intent(Intent.ACTION_DIAL);
+        callIntent.setData(Uri.parse("tel:" + phoneNumber));
+        activity.startActivity(callIntent);
+    }
+
+    public static boolean isValidURL(String urlStr) {
+        return  Patterns.WEB_URL.matcher(urlStr).matches();
+    }
+
+
+    public static String textFromHtml(String text){
+        Spanned result;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
+            result = Html.fromHtml(text, Html.FROM_HTML_MODE_LEGACY);
+        else
+            result = Html.fromHtml(text);
+        return result.toString();
+    }
 
     public static boolean checkInternetConnection(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -81,12 +110,14 @@ public class Utility {
         }
         s.setSpan(new ForegroundColorSpan(titleColor), 0, title.length(), 0);
         return s;
+        //TextUtils.concat(content1, content2)
     }
 
     public static SpannableString generateBoldTitle(String title, String normalText) {
         SpannableString s = new SpannableString(title + " " + normalText);
         s.setSpan(new StyleSpan(Typeface.BOLD), 0, title.length(), 0);
         return s;
+        //TextUtils.concat(content1, content2)
     }
 
     public static int getColor(Context context, int resourceId) {
