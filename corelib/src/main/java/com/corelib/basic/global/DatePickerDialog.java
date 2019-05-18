@@ -9,6 +9,7 @@ import android.widget.DatePicker;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
+import com.corelib.R;
 import com.corelib.basic.util.DateTimeUtility;
 import com.corelib.basic.util.L;
 
@@ -36,16 +37,16 @@ public class DatePickerDialog {
     private Activity activity;
 
     /**
-     *     private int sDay, sMonth, sYear;
-     *     private int eDay, eMonth, eYear;
-     *
-     *     private void initDate() {
-     *         int[] date = DatePickerDialog2.initDate();
-     *         sDay=date[0];
-     *         sMonth=date[1];
-     *         sYear=date[2];
-     *         tvDate.setText(DatePickerDialog2.getFormattedDate(sDay,sMonth,sYear));
-     *     }
+     * private int sDay, sMonth, sYear;
+     * private int eDay, eMonth, eYear;
+     * <p>
+     * private void initDate() {
+     * int[] date = DatePickerDialog2.initDate();
+     * sDay=date[0];
+     * sMonth=date[1];
+     * sYear=date[2];
+     * tvDate.setText(DatePickerDialog2.getFormattedDate(sDay,sMonth,sYear));
+     * }
      */
     public static int[] initDate(String inputDate) {
         Calendar calendar;
@@ -145,15 +146,15 @@ public class DatePickerDialog {
                 day = calendar.get(Calendar.DAY_OF_MONTH);
             }
             android.app.DatePickerDialog dpd;
-            dpd = new android.app.DatePickerDialog(activity, new android.app.DatePickerDialog.OnDateSetListener() {
+            dpd = new android.app.DatePickerDialog(activity, R.style.DatePicker, new android.app.DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int yy, int mm, int dd) {
                     if (mListener != null) {
-                        mListener.onSelectDateClick( dd, mm, yy, DateTimeUtility.cDateDDMMMYY(dd, mm, yy));
+                        mListener.onSelectDateClick(dd, mm, yy, DateTimeUtility.cDateDDMMMYY(dd, mm, yy));
                     }
                     if (mFlagListener != null) {
                         if (dateType == START_DATE) {
-                            mFlagListener.onStartDateSelected( dd, mm, yy, DateTimeUtility.cDateDDMMMYY(dd, mm, yy));
+                            mFlagListener.onStartDateSelected(dd, mm, yy, DateTimeUtility.cDateDDMMMYY(dd, mm, yy));
                         } else {
                             mFlagListener.onEndDateSelected(dd, mm, yy, DateTimeUtility.cDateDDMMMYY(dd, mm, yy));
                         }
@@ -177,13 +178,12 @@ public class DatePickerDialog {
     }
 
 
-
     public static String formattedDate(int day, int month, int year) {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.YEAR, year);
         cal.set(Calendar.DAY_OF_MONTH, day);
         cal.set(Calendar.MONTH, month);
 
-        return  new SimpleDateFormat("dd/MM/yyyy", Locale.US).format(cal.getTime());
+        return new SimpleDateFormat("dd/MM/yyyy", Locale.US).format(cal.getTime());
     }
 }

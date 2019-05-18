@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.DatePicker;
 
 
+import com.corelib.R;
 import com.corelib.basic.util.DateTimeUtility;
 import com.corelib.basic.util.L;
 
@@ -141,7 +142,7 @@ public class DatePickerDialog2 extends DialogFragment implements android.app.Dat
             day = calendar.get(Calendar.DAY_OF_MONTH);
         }
         android.app.DatePickerDialog dpd;
-        dpd = new android.app.DatePickerDialog(getContext(), this, year, month, day);
+        dpd = new android.app.DatePickerDialog(getContext(), R.style.DatePicker, this, year, month, day);
 
 
         if (minDate) {
