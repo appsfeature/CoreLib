@@ -3,6 +3,7 @@ package com.corelib.basic.util;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
@@ -13,6 +14,7 @@ import android.transition.Transition;
 import android.transition.Visibility;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -514,5 +516,107 @@ public class AppAnimation {
         alphaAnimation.setDuration(duration);
         alphaAnimation.setFillAfter(true);
         v.startAnimation(alphaAnimation);
+    }
+
+    private void showViewAction(final View view,int fromWidth, int toWidth, int fromHeight, int toHeight) {
+        if (view != null) {
+
+            ValueAnimator heightAnimation = ValueAnimator.ofInt(fromHeight, toHeight);
+            heightAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    int val = (Integer) valueAnimator.getAnimatedValue();
+                    ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+                    layoutParams.height = val;
+                    view.setLayoutParams(layoutParams);
+                }
+            });
+
+            ValueAnimator widthAnimation = ValueAnimator.ofInt(fromWidth, toWidth);
+            widthAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator updatedAnimation) {
+                    int val = (Integer) updatedAnimation.getAnimatedValue();
+                    ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+                    layoutParams.width = val;
+                    view.setLayoutParams(layoutParams);
+                }
+            });
+
+            AnimatorSet animatorSet = new AnimatorSet();
+            animatorSet.setDuration(3000);
+            animatorSet.playTogether(heightAnimation, widthAnimation);
+            widthAnimation.addListener(new Animator.AnimatorListener() {
+                @Override
+                public void onAnimationStart(Animator animation) {
+                    view.setVisibility(View.VISIBLE);
+                }
+
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    view.setVisibility(View.VISIBLE);
+                }
+
+                @Override
+                public void onAnimationCancel(Animator animation) {
+                }
+
+                @Override
+                public void onAnimationRepeat(Animator animation) {
+                }
+            });
+            view.setVisibility(View.VISIBLE);
+            widthAnimation.start();
+        }
+    }
+
+    private void hideViewAction(final View view, int fromWidth, int toWidth, int fromHeight, int toHeight) {
+
+        if (view != null) {
+            ValueAnimator heightAnimation = ValueAnimator.ofInt(fromHeight, toHeight);
+            heightAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    int val = (Integer) valueAnimator.getAnimatedValue();
+                    ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+                    layoutParams.height = val;
+                    view.setLayoutParams(layoutParams);
+                }
+            });
+
+            ValueAnimator widthAnimation = ValueAnimator.ofInt(fromWidth, toWidth);
+            widthAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator updatedAnimation) {
+                    int val = (Integer) updatedAnimation.getAnimatedValue();
+                    ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+                    layoutParams.width = val;
+                    view.setLayoutParams(layoutParams);
+                }
+            });
+            AnimatorSet animatorSet = new AnimatorSet();
+            animatorSet.setDuration(3000);
+            animatorSet.playTogether(
+                    heightAnimation, widthAnimation);
+            widthAnimation.addListener(new Animator.AnimatorListener() {
+                @Override
+                public void onAnimationStart(Animator animation) {
+                }
+
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    view.setVisibility(View.GONE);
+                }
+
+                @Override
+                public void onAnimationCancel(Animator animation) {
+                }
+
+                @Override
+                public void onAnimationRepeat(Animator animation) {
+                }
+            });
+            widthAnimation.start();
+        }
     }
 }
