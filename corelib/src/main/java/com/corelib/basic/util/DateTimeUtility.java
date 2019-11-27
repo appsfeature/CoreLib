@@ -13,7 +13,7 @@ import java.util.TimeZone;
 public class DateTimeUtility {
 
     // use in adapter Class
-    private CharSequence convertTimestamp(String mileSecond){
+    private CharSequence convertTimeStamp(String mileSecond){
         return DateUtils.getRelativeTimeSpanString(Long.parseLong(mileSecond), System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS);
     }
 
