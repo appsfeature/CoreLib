@@ -7,11 +7,7 @@ Add this to your project build.gradle
 ``` gradle
 allprojects {
     repositories {
-        maven {
-            credentials {
-                username 'amitresearchdev'
-                password 'fQugzTVKdZTgkVJe2Jk4'
-            }
+        maven { 
             url 'https://jitpack.io'
         }
     }
